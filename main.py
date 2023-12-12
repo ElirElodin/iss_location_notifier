@@ -2,12 +2,13 @@ import requests
 import json
 from datetime import datetime
 import smtplib
+import time
 
 ## Costant declaration
 ISS_API = "http://api.open-notify.org/iss-now.json"
 SUN_RISE_SET_API = " https://api.sunrise-sunset.org/json"
-MY_LAT = 50.643910
-MY_LONG = 5.571560
+MY_LAT = 5.5555
+MY_LONG = 5.5555
 
 EMAIL = " "
 APP_KEY = ""
@@ -81,5 +82,6 @@ prg_on = True
 while prg_on:
     if iss_overhead() and is_night():
         send_email()
-
+    # 6 seconds delay times from each loope cicle    
+    time.sleep(6) 
     print("procceess")
